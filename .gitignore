@@ -1,0 +1,67 @@
+# Codex / local agent state
+.codex/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.env
+.venv
+venv/
+env/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# Common Lisp / ASDF / FASL artifacts
+*.fasl
+*.fas
+*.fsl
+*.dx64fsl
+*.lx64fsl
+*.abcl
+*.dfsl
+*.pfsl
+*.cfasl
+*.ufasl
+*.lib
+*.x86f
+*.sparcf
+*.lisp-temp
+.cache/
+common-lisp/
+
+# SLIME / SLY
+.slime-history
+.slynk-history
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs / reports generated locally
+*.log
+reports/*.json
+reports/*.csv
+reports/*.html
+!reports/.gitkeep
+
+# Data generated locally
+data/generated/
+data/cache/
+!data/.gitkeep
