@@ -53,22 +53,21 @@ over a formula."
 		(lambda (left-result right-result) (+1 (max left-result right-result)))
 		(lambda (f)  (error "Malformed formula: ~S" f))))
 
-
-(defun formula-vars (formula)
-  "Count the number of variables in a formula."
-  (formula-fold maybe-formula
-		(lambda (a) 1)
-		(lambda (result) (result))
-		(lambda (left-result right-result) (+ left-result right-result))
-		(lambda (f)  (error "Malformed formula: ~S" f))))
-
-
 (defun formula-size (formula)
   "Calculates formula size, i.e. how many symbols there are in the whole expression."
   (formula-fold maybe-formula
 		(lambda (a) 1)
 		(lambda (result) (+ 1 result))
 		(lambda (left-result right-result) (+ 1 left-result right-result))
+		(lambda (f)  (error "Malformed formula: ~S" f))))
+
+
+(defun formula-vars (formula)
+  "Collects the distinct variables in a formula into a list."
+  (formula-fold formula
+		(lambda (a) (list a))
+		(lambda (result) result)
+		(lambda (left-result right-result) (union left-result right-result :test #'eq))
 		(lambda (f)  (error "Malformed formula: ~S" f))))
 
 
