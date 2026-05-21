@@ -16,20 +16,13 @@
      sigma)
     sigma-copy))
 
-(defun substitution-bound-symbol-p (sigma symbol)
-  "Return true iff SYMBOL is bound in substitution SIGMA."
-  (multiple-value-bind (value present-p)
-      (gethash symbol sigma)
-    (declare (ignore value))
-    present-p))
-
 (defun substitution-lookup (sigma symbol)
   "Return the formula bound to SYMBOL in SIGMA, or NIL if unbound."
   (gethash symbol sigma))
 
 (defun substitution-bind! (sigma key val)
   "Destructively binds KEY to VAL in SIGMA"
-  (if (and key (symbol-p key) (formula-p val))
+  (if (and key (symbolp key) (formula-p val))
       (progn
 	(setf (gethash key sigma) val)
 	sigma)

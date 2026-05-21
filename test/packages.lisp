@@ -10,5 +10,12 @@
                 #:formula->sexp
                 #:make-prop-var
                 #:make-negation
-                #:make-implication)
+                #:make-implication
+		#:make-substitution
+		#:copy-substitution
+		#:substitution-bound-symbol-p
+		#:substitution-lookup
+		#:substitution-bind!
+		#:clear-substitution!
+		#:apply-substitution)
   (:export #:run-tests))
