@@ -95,3 +95,33 @@
                      (sexp->formula 'ps))))
   (is (not (formula= (sexp->formula '(:imp (:not ph) ps))
                      (sexp->formula '(:imp (:not ph) ch))))))
+
+(test sexp-to-formula-malformed-inputs
+  "Sexp->formula should signal an error for sexps that are not formulas."
+  (dolist (sexp '(nil
+                  ()
+                  17
+                  (:not)
+                  (:not ph ps)
+                  (:imp ph)
+                  (:imp ph ps ch)
+                  (:and ph ps)))
+    (signals error (sexp->formula sexp))))
+
+(test formula-operations-malformed-inputs
+  "Formula operations that expect formulas should signal errors on malformed input."
+  (dolist (formula '(nil
+                     ph
+                     (:not ph)
+                     (:imp ph ps)
+                     17))
+    (signals error (formula-depth formula))
+    (signals error (formula-size formula))
+    (signals error (formula-vars formula))
+    (signals error (formula->sexp formula))))
+
+(test formula-equality-malformed-inputs
+  "Formula= should return false, not signal an error, for malformed unequal inputs."
+  (is (not (formula= 'ph '(:not ph))))
+  (is (not (formula= '(:not ph) '(:imp ph ph))))
+  (is (not (formula= '(:imp ph ps) '(:imp ps ph)))))
