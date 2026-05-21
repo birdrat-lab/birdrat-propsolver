@@ -42,22 +42,22 @@ over a formula."
 (defun formula-p (maybe-formula)
   "For a passed object, checks if it's a formula"
   (formula-fold maybe-formula
-		(lambda (f) (and (prop-var-name f) (symbolp (prop-var-name f))))
+		(lambda (f) (and f (symbolp f)))
 		(lambda (result) (and t result))
 		(lambda (left-result right-result) (and t left-result right-result))
 		(lambda (f) nil)))
 
 (defun formula-depth (formula)
   "Calculates formula depth, i.e. how many operators are applied in one expression."
-  (formula-fold maybe-formula
+  (formula-fold formula
 		(lambda (a) 0)
 		(lambda (result) (+ 1 result))
-		(lambda (left-result right-result) (+1 (max left-result right-result)))
+		(lambda (left-result right-result) (+ 1 (max left-result right-result)))
 		(lambda (f)  (error "Malformed formula: ~S" f))))
 
 (defun formula-size (formula)
   "Calculates formula size, i.e. how many symbols there are in the whole expression."
-  (formula-fold maybe-formula
+  (formula-fold formula
 		(lambda (a) 1)
 		(lambda (result) (+ 1 result))
 		(lambda (left-result right-result) (+ 1 left-result right-result))
