@@ -78,11 +78,11 @@ over a formula."
     ((and (prop-var-p left-side) (prop-var-p right-side))
      (eq (prop-var-name left-side) (prop-var-name right-side)))
     ((and (negation-p left-side) (negation-p right-side))
-     (formula-eq (negation-formula left-side) (negation-formula right-side)))
+     (formula= (negation-formula left-side) (negation-formula right-side)))
     ((and (implication-p left-side) (implication-p right-side))
      (and
-      (formula-eq (implication-from left-side) (implication-from right-side))
-      (formula-eq (implication-to left-side) (implication-to right-side))))
+      (formula= (implication-from left-side) (implication-from right-side))
+      (formula= (implication-to left-side) (implication-to right-side))))
     (t nil)))
 
   
