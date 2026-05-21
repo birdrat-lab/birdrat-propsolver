@@ -1,3 +1,5 @@
+(in-package #:birdrat-propsolver/kernel)
+
 (defstruct prop-var
   name)
 
@@ -83,5 +85,4 @@ over a formula."
       (formula-eq (implication-to left-side) (implication-to right-side))))
     (t nil)))
 
-(defun formula->sexp (formula)
   
