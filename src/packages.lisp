@@ -35,4 +35,7 @@
    #:substitution-lookup
    #:substitution-bind!
    #:clear-substitution!
-   #:apply-substitution))
+   #:apply-substitution
+
+   ;; unification operations
+   #:unify-formulas!))

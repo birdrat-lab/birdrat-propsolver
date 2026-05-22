@@ -16,5 +16,6 @@
 		#:substitution-lookup
 		#:substitution-bind!
 		#:clear-substitution!
-		#:apply-substitution)
+		#:apply-substitution
+                #:unify-formulas!)
   (:export #:run-tests))
