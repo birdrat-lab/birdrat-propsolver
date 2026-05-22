@@ -1,5 +1,6 @@
 (in-package #:birdrat-propsolver/kernel)
 
+
 (defun formula->sexp (formula)
   "Converts a formula to a printable S-expression"
   (formula-fold
