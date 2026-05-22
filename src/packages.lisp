@@ -32,7 +32,6 @@
    ;; substitution operations
    #:make-substitution
    #:copy-substitution
-   #:substitution-bound-symbol-p
    #:substitution-lookup
    #:substitution-bind!
    #:clear-substitution!

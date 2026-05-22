@@ -69,7 +69,10 @@
   ((:module "test"
     :components
     ((:file "packages")
-     (:file "kernel-tests")
+     (:file "formula-tests")
+     (:file "parser-tests")
+     (:file "printer-tests")
+     (:file "substitution-tests")
      (:file "unify-tests")
      (:file "cd-tests")
      (:file "proof-tests")
