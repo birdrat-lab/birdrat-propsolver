@@ -29,5 +29,8 @@
                 #:cd-proof-p
                 #:proof-p
                 #:proof-size
-                #:proof-depth)
+                #:proof-depth
+                #:axiom-proof-formula
+                #:freshen-formula
+                #:check-proof)
   (:export #:run-tests))

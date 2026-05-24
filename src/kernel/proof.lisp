@@ -26,7 +26,6 @@
   (and
    (listp proof)
    (= (length proof) 3)
-   (symbolp (first proof))
    (eq (first proof) :cd)))
 
 (defun proof-p (proof)

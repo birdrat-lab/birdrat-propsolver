@@ -55,4 +55,7 @@
    #:cd-proof-p
    #:proof-p
    #:proof-size
-   #:proof-depth))
+   #:proof-depth
+
+   ;; proof checking
+   #:check-proof))
