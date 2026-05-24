@@ -76,6 +76,7 @@
      (:file "unify-tests")
      (:file "cd-tests")
      (:file "proof-tests")
+     (:file "checker-tests")
      (:file "search-tests"))))
   :perform (asdf:test-op (op c)
              (uiop:symbol-call :birdrat-propsolver/test

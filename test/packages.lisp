@@ -9,8 +9,15 @@
                 #:sexp->formula
                 #:formula->sexp
                 #:make-prop-var
+                #:prop-var-p
+                #:prop-var-name
                 #:make-negation
+                #:negation-p
+                #:negation-formula
                 #:make-implication
+                #:implication-p
+                #:implication-from
+                #:implication-to
 		#:make-substitution
 		#:copy-substitution
 		#:substitution-lookup
