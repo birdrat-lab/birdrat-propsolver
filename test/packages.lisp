@@ -17,5 +17,9 @@
 		#:substitution-bind!
 		#:clear-substitution!
 		#:apply-substitution
-                #:unify-formulas!)
+                #:unify-formulas!
+                #:p2-axiom-1
+                #:p2-axiom-2
+                #:p2-axiom-3
+                #:condensed-detach)
   (:export #:run-tests))
