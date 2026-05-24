@@ -22,5 +22,12 @@
                 #:p2-axiom-2
                 #:p2-axiom-3
                 #:apply-unifier
-                #:condensed-detach)
+                #:condensed-detach
+                #:make-axiom-proof
+                #:make-cd-proof
+                #:axiom-proof-p
+                #:cd-proof-p
+                #:proof-p
+                #:proof-size
+                #:proof-depth)
   (:export #:run-tests))

@@ -46,4 +46,13 @@
    #:p2-axiom-3
 
    ;; condensed detachment
-   #:condensed-detach))
+   #:condensed-detach
+
+   ;; proof operations
+   #:make-axiom-proof
+   #:make-cd-proof
+   #:axiom-proof-p
+   #:cd-proof-p
+   #:proof-p
+   #:proof-size
+   #:proof-depth))
