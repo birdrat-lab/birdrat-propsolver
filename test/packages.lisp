@@ -21,5 +21,6 @@
                 #:p2-axiom-1
                 #:p2-axiom-2
                 #:p2-axiom-3
+                #:apply-unifier
                 #:condensed-detach)
   (:export #:run-tests))
